@@ -4,7 +4,10 @@ const button = document.querySelector('button');
 button.addEventListener('click', createSquares);
 
 function buttonNumber() {
-    number = prompt('Enter a number!');
+    number = prompt("Enter a number less than or equal to 100!");
+    while (number > 100) {
+        number = prompt("Enter a number less than or equal to 100!");
+    }
     return number;
 }
 
