@@ -24,7 +24,18 @@ function createSquares() {
     for (let x = 0; x < number * number; x++) {
         const squares = document.createElement('div');
         playWindow.appendChild(squares);
-        squares.style.cssText = `width:${800 / number}px; height: ${800 / number}px`;
+        if(x == 0){
+            squares.style.cssText = `width:${600 / number}px; height: ${600 / number}px ; border-radius: 10px 0 0 0`;
+        }else if(x == number-1){
+            squares.style.cssText = `width:${600 / number}px; height: ${600 / number}px ; border-radius: 0 10px 0 0`;
+        }else if(x== number*number-1){
+            squares.style.cssText = `width:${600 / number}px; height: ${600 / number}px; border-radius: 0 0px 10px 0`;
+        }else if(x == number * number - number) {
+            squares.style.cssText = `width:${600 / number}px; height: ${600 / number}px; border-radius: 0 0px 0 10px`;
+        }else{
+            squares.style.cssText = `width:${600 / number}px; height: ${600 / number}px;`
+        }
+        
         squares.classList.add('squares');
     };
     
